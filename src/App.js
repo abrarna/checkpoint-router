@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./Home";
+import { useState } from "react";
+import { moviesData } from "./data";
+import ReadMore from "./ReadMore";
+import { Routes, Route } from "react-router-dom";
+const App = () => {
+  const [title, setTitle] = useState("");
+  const [rating, setRating] = useState(1);
 
-function App() {
+  const addMovie = (newMovie) => {
+    // console.log(newMovie);
+    moviesData.push(newMovie);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              moviesData={moviesData}
+              title={title}
+              setTitle={setTitle}
+              rating={rating}
+              setRating={setRating}
+              addMovie={addMovie}
+            />
+          }
+        />
+        <Route path="/moviesData/:id" element={<ReadMore />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
