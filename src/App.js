@@ -1,7 +1,9 @@
+import "./styles.css";
 import Home from "./Home";
 import { useState } from "react";
 import { moviesData } from "./data";
 import ReadMore from "./ReadMore";
+import Navbar from "./components/Layout/Navbar";
 import { Routes, Route } from "react-router-dom";
 const App = () => {
   const [title, setTitle] = useState("");
@@ -13,6 +15,7 @@ const App = () => {
   };
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route
           path="/"

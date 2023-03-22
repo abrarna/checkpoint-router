@@ -2,3 +2,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(21, 182, 105);
+}
+
+.nav a {
+  /* display: block; */
+  text-decoration: none;
+  color: rgb(56, 18, 196);
+  padding: 26px 10px;
+  font-size: 18px;
+}
+
+.nav a:hover {
+  background-color: rgb(43, 192, 43);
+}
